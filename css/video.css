@@ -1,0 +1,168 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #777;
+}
+
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the videos horizontally */
+    align-items: center; /* Center the videos vertically */
+}
+
+.video-item {
+    width: 300px;
+    margin: 20px; /* Increase the margin to add more space between videos */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+}
+
+.video-thumbnail {
+    position: relative;
+    cursor: pointer;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.play-button:hover {
+    background-color: #333;
+}
+
+.play-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 25px;
+    border-color: transparent transparent transparent #333;
+}
+
+h3 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .video-gallery {
+        flex-direction: column; /* Stack videos vertically on small screens */
+        align-items: center; /* Center videos horizontally on small screens */
+    }
+
+    .video-item {
+        width: calc(100% - 30px); /* Adjust the width for mobile screens */
+        margin: 15px; /* Adjust the margin for mobile screens */
+    }
+    
+    .video-card {
+        width: 100%;
+    }
+    
+    .video-thumbnail {
+        position: relative;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 2px solid #333;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .play-button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 0 10px 15px;
+        border-color: transparent transparent transparent #333;
+    }
+
+    .video-info {
+        padding: 10px;
+        text-align: center;
+    }
+
+    h3 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #333;
+    }
+}
+/* Add these styles for badges */
+.live-badge,
+.upcoming-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px;
+    background-color: red; /* Customize the color for live videos */
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    z-index: 2;
+}
